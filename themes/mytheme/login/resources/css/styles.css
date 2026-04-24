@@ -1,0 +1,480 @@
+:root {
+  --cello-card-bg: #f1f1f1;
+  --cello-text: #1f2328;
+  --cello-label: #7f7f7f;
+  --cello-placeholder: #b9b9b9;
+  --cello-input-border: #d5d5d5;
+  --cello-link: #f85a22;
+  --cello-primary: #f85a22;
+  --cello-font-family: "Prompt", "Noto Sans Thai", "Sarabun", Arial, sans-serif;
+  --cello-brand-logo-url: url("img/logo-v2-white.png");
+}
+
+html,
+body,
+.login-pf,
+.login-pf body {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--cello-font-family);
+  background-color: #220904 !important;
+  background-image: url("img/back-ground-login.png") !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 22px;
+  left: 22px;
+  width: 34px;
+  height: 46px;
+  background-image: var(--cello-brand-logo-url);
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+body::after {
+  content: "CELLO";
+  position: fixed;
+  top: 29px;
+  font-family: "Prompt", "Noto Sans Thai", "Sarabun", Arial, sans-serif;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  z-index: 10;
+}
+
+#kc-header,
+#kc-header-wrapper,
+#kc-page-title,
+#kc-locale,
+.cello-hidden-header {
+  display: none !important;
+}
+
+.login-pf-page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 16px;
+}
+
+#kc-content,
+#kc-content-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-pf,
+.login-pf .card-pf {
+  width: 100%;
+  max-width: 562px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.cello-login-card {
+  width: 562px;
+  max-width: 100%;
+  border-radius: 22px;
+  background: var(--cello-card-bg);
+  padding: 52px 48px 46px;
+  box-sizing: border-box;
+}
+
+.cello-title {
+  margin: 0;
+  color: #1d2025;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.cello-title::after {
+  content: "";
+  display: block;
+  width: 150px;
+  height: 4px;
+  border-radius: 999px;
+  margin: 10px auto 0;
+  background: #d8d8d8;
+}
+
+.cello-subtitle {
+  margin: 34px 0 18px;
+  text-align: center;
+  color: #8a8a8a;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.cello-alert {
+  margin-bottom: 14px;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.cello-alert-error {
+  background: #fde8e8;
+  color: #b42318;
+}
+
+.cello-form {
+  margin: 0;
+}
+
+.cello-field {
+  margin-bottom: 18px;
+}
+
+.cello-field label {
+  display: block;
+  margin: 0 0 8px;
+  color: var(--cello-label);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.required {
+  color: var(--cello-primary);
+}
+
+.cello-password-wrap {
+  position: relative;
+}
+
+.cello-input {
+  width: 100%;
+  height: 52px;
+  border: 1px solid var(--cello-input-border);
+  border-radius: 9px;
+  background: #f5f5f5;
+  box-sizing: border-box;
+  padding: 0 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #595959;
+  outline: 0;
+  box-shadow: none;
+}
+
+.cello-password-wrap .cello-input {
+  padding-right: 54px;
+}
+
+.cello-input::placeholder {
+  color: var(--cello-placeholder);
+  font-weight: 500;
+}
+
+.cello-input:focus {
+  border-color: #d0d0d0;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+.cello-password-toggle {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #8f8f8f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.cello-password-toggle:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.cello-password-toggle:focus-visible {
+  outline: 2px solid var(--cello-primary);
+  outline-offset: 2px;
+}
+
+.cello-password-icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cello-password-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.cello-password-icon-eye-off {
+  opacity: 0;
+}
+
+.cello-password-toggle.is-visible .cello-password-icon-eye {
+  opacity: 0;
+}
+
+.cello-password-toggle.is-visible .cello-password-icon-eye-off {
+  opacity: 1;
+}
+
+.cello-reset-copy {
+  margin: 24px 0 20px;
+  text-align: center;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.cello-reset-copy a {
+  color: var(--cello-link);
+  text-decoration: underline;
+}
+
+.cello-login-button {
+  width: 100%;
+  height: 46px;
+  border: 0;
+  border-radius: 8px;
+  background: #dedede;
+  color: #9b9b9b;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cello-login-button::before {
+  content: "\2192";
+  font-size: 24px;
+  opacity: 0.45;
+}
+
+.cello-login-button.is-ready {
+  background: var(--cello-primary);
+  color: #fff;
+  cursor: pointer;
+}
+
+.cello-login-button.is-ready::before {
+  opacity: 1;
+}
+
+.cello-footer {
+  margin-top: 28px;
+  text-align: center;
+  color: #222;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.cello-footer a {
+  margin-left: 7px;
+  color: var(--cello-link);
+  text-decoration: underline;
+}
+
+.cello-modal-open {
+  overflow: hidden;
+}
+
+.cello-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+.cello-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(9, 12, 18, 0.58);
+}
+
+.cello-modal__dialog {
+  position: relative;
+  width: min(720px, calc(100vw - 24px));
+  max-height: calc(100vh - 40px);
+  margin: 20px auto;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(16, 24, 40, 0.28);
+  overflow: hidden;
+}
+
+.cello-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 22px;
+  border-bottom: 1px solid #ececec;
+}
+
+.cello-modal__header h2 {
+  margin: 0;
+  color: #1d2025;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.cello-modal__close {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 999px;
+  background: #f4f4f5;
+  color: #676767;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cello-modal__content {
+  max-height: calc(100vh - 132px);
+  overflow: auto;
+  padding: 22px;
+  color: #2b2f36;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.cello-modal__content h1,
+.cello-modal__content h2,
+.cello-modal__content h3 {
+  color: #1d2025;
+  line-height: 1.3;
+}
+
+.cello-modal__content a {
+  color: var(--cello-link);
+}
+
+.cello-modal__state {
+  margin: 0;
+  color: #4c5563;
+  font-weight: 600;
+}
+
+.cello-modal__state--error {
+  color: #c43232;
+}
+
+.cello-version {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 12px;
+  color: #b8b8b8;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  body::before {
+    top: 16px;
+    left: 16px;
+    width: 26px;
+    height: 34px;
+  }
+
+  body::after {
+    top: 22px;
+    left: 60px;
+    font-size: 24px;
+  }
+
+  html,
+  body,
+  .login-pf,
+  .login-pf body {
+    background-size: cover !important;
+  }
+
+  .login-pf-page {
+    align-items: flex-start;
+    padding: 74px 12px 20px;
+  }
+
+  .cello-login-card {
+    border-radius: 18px;
+    padding: 30px 18px 24px;
+  }
+
+  .cello-title {
+    font-size: 22px;
+  }
+
+  .cello-subtitle {
+    margin-top: 22px;
+    font-size: 15px;
+  }
+
+  .cello-field label {
+    font-size: 15px;
+  }
+
+  .cello-input {
+    height: 46px;
+    font-size: 15px;
+  }
+
+  .cello-login-button {
+    font-size: 20px;
+  }
+
+  .cello-footer {
+    font-size: 16px;
+  }
+
+  .cello-modal__dialog {
+    width: calc(100vw - 16px);
+    margin: 8px auto;
+    border-radius: 14px;
+  }
+
+  .cello-modal__header {
+    padding: 14px 16px;
+  }
+
+  .cello-modal__header h2 {
+    font-size: 18px;
+  }
+
+  .cello-modal__content {
+    padding: 16px;
+    font-size: 14px;
+  }
+}
