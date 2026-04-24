@@ -339,7 +339,9 @@
 
           try {
             var url = new URL(apiUrl, window.location.origin);
-            url.searchParams.set("lang", lang);
+            if (!url.searchParams.has("lang")) {
+              url.searchParams.set("lang", lang);
+            }
 
             var response = await fetch(url.toString(), {
               method: "GET",
