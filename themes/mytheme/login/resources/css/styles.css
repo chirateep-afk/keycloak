@@ -44,11 +44,11 @@ body::before {
 body::after {
   content: "CELLO";
   position: fixed;
-  top: 29px;
-  left: 76px;
+  top: 35px;
+  left: 64px;
   font-family: "Prompt", "Noto Sans Thai", "Sarabun", Arial, sans-serif;
   color: #fff;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 500;
   letter-spacing: 0.01em;
   line-height: 1;
@@ -103,7 +103,7 @@ body::after {
   margin: 0;
   color: #1d2025;
   text-align: center;
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 800;
   line-height: 1.08;
 }
@@ -303,7 +303,7 @@ body::after {
   margin-top: 28px;
   text-align: center;
   color: #222;
-  font-size: 19px;
+  font-size: 16px;
 }
 
 .cello-footer a {
@@ -401,7 +401,7 @@ body::after {
 .cello-version {
   margin-top: 14px;
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
   color: #b8b8b8;
   font-weight: 700;
 }
@@ -415,8 +415,8 @@ body::after {
   }
 
   body::after {
-    top: 22px;
-    left: 60px;
+    top: 21px;
+    left: 50px;
     font-size: 24px;
   }
 
