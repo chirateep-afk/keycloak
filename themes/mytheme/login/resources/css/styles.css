@@ -45,9 +45,10 @@ body::after {
   content: "CELLO";
   position: fixed;
   top: 29px;
+  left: 76px;
   font-family: "Prompt", "Noto Sans Thai", "Sarabun", Arial, sans-serif;
   color: #fff;
-  font-size: 10px;
+  font-size: 24px;
   font-weight: 500;
   letter-spacing: 0.01em;
   line-height: 1;
@@ -159,7 +160,8 @@ body::after {
   color: var(--cello-primary);
 }
 
-.cello-password-wrap {
+.cello-password-wrap,
+.cello-input-wrap {
   position: relative;
 }
 
@@ -178,7 +180,8 @@ body::after {
   box-shadow: none;
 }
 
-.cello-password-wrap .cello-input {
+.cello-password-wrap .cello-input,
+.cello-input-wrap .cello-input {
   padding-right: 54px;
 }
 
@@ -234,16 +237,16 @@ body::after {
   fill: currentColor;
 }
 
-.cello-password-icon-eye-off {
+.cello-password-icon-eye {
   opacity: 0;
 }
 
 .cello-password-toggle.is-visible .cello-password-icon-eye {
-  opacity: 0;
+  opacity: 1;
 }
 
 .cello-password-toggle.is-visible .cello-password-icon-eye-off {
-  opacity: 1;
+  opacity: 0;
 }
 
 .cello-reset-copy {
@@ -278,10 +281,12 @@ body::after {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.cello-login-button::before {
-  content: "\2192";
-  font-size: 24px;
+.cello-login-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
   opacity: 0.45;
+  transition: opacity 0.2s ease;
 }
 
 .cello-login-button.is-ready {
@@ -290,7 +295,7 @@ body::after {
   cursor: pointer;
 }
 
-.cello-login-button.is-ready::before {
+.cello-login-button.is-ready .cello-login-icon {
   opacity: 1;
 }
 
@@ -299,7 +304,6 @@ body::after {
   text-align: center;
   color: #222;
   font-size: 19px;
-  font-weight: 700;
 }
 
 .cello-footer a {

@@ -18,7 +18,22 @@
       <form id="kc-form-login" class="cello-form" action="${url.loginAction}" method="post">
         <div class="cello-field">
           <label for="username">ชื่อผู้ใช้ <span class="required">*</span></label>
-          <input tabindex="1" id="username" class="cello-input" name="username" type="text" autofocus autocomplete="username" value="${(login.username!'')}" placeholder="กรุณาระบุชื่อผู้ใช้ให้ถูกต้อง" />
+          <div class="cello-input-wrap">
+            <input tabindex="1" id="username" class="cello-input" name="username" type="text" autofocus autocomplete="username" value="${(login.username!'')}" placeholder="กรุณาระบุชื่อผู้ใช้ให้ถูกต้อง" />
+            <button
+              class="cello-password-toggle"
+              id="cello-username-clear"
+              type="button"
+              aria-label="ลบชื่อผู้ใช้"
+              style="display: none;"
+            >
+              <span class="cello-password-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+              </span>
+            </button>
+          </div>
         </div>
 
         <div class="cello-field">
@@ -55,7 +70,12 @@
 
         <input type="hidden" id="id-hidden-input" name="credentialId" <#if auth?has_content && auth.selectedCredential?has_content>value="${auth.selectedCredential}"</#if> />
 
-        <button tabindex="4" class="cello-login-button" name="login" id="kc-login" type="submit">เข้าสู่ระบบ</button>
+        <button tabindex="4" class="cello-login-button" name="login" id="kc-login" type="submit">
+          <svg class="cello-login-icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z"/>
+          </svg>
+          เข้าสู่ระบบ
+        </button>
       </form>
 
       <div class="cello-footer">
@@ -419,6 +439,24 @@
             updatePasswordToggleState();
           });
           updatePasswordToggleState();
+        }
+
+        var usernameClear = document.getElementById("cello-username-clear");
+
+        function updateUsernameClearState() {
+          if (!usernameInput || !usernameClear) return;
+          usernameClear.style.display = usernameInput.value.length > 0 ? "inline-flex" : "none";
+        }
+
+        if (usernameClear && usernameInput) {
+          usernameClear.addEventListener("click", function() {
+            usernameInput.value = "";
+            usernameInput.focus();
+            updateUsernameClearState();
+            updateLoginButtonState();
+          });
+          usernameInput.addEventListener("input", updateUsernameClearState);
+          updateUsernameClearState();
         }
 
         if (usernameInput && passwordInput) {
